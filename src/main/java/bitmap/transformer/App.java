@@ -9,9 +9,11 @@ public class App {
 
     public static void main(String[] args) {
 
+
         Bitmap newBitmap = new Bitmap();
 
         newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
 
+        newBitmap.imageToFile(new File("src/main/assets/mario2.bmp"));
     }
 }

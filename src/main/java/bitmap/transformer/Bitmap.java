@@ -1,9 +1,11 @@
 package bitmap.transformer;
 
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 
 public class Bitmap {
 
@@ -20,6 +22,24 @@ public class Bitmap {
     }
   }
 
+   public void imageToFile(File path){
+try {
 
-
+  ImageIO.write(this.img, "bmp", path);
 }
+      catch (IOException e) {
+      e.printStackTrace();
+      System.out.println("can't read file");
+    }
+
+
+  }
+
+    }
+
+
+
+
+
+
+
