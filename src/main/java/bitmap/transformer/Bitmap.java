@@ -11,15 +11,23 @@ public class Bitmap {
 
   BufferedImage img = null;
 
-  public void readBitmap(File path) {
-
-    try {
+  public String readBitmap(File path) {
+      String goodRead = "Good Read";
+      String badRead = "Bad Read";
+      try {
       this.img = ImageIO.read(path);
       System.out.println(this.img);
+      return goodRead;
     } catch (IOException e) {
-      e.printStackTrace();
-      System.out.println("can't read file");
+
+    // e.printStackTrace();
+          return badRead;
+      //System.out.println("can't read file");
+     // return badRead;
+
     }
+
+   // System.out.println("image read successfully");
   }
 
    public void imageToFile(File path){

@@ -12,8 +12,8 @@ public class App {
 
         Bitmap newBitmap = new Bitmap();
 
-        newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+        newBitmap.readBitmap(new File(args[0]));
 
-        newBitmap.imageToFile(new File("src/main/assets/mario2.bmp"));
+        newBitmap.imageToFile(new File(args[1]));
     }
 }

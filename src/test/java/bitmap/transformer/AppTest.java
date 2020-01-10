@@ -4,12 +4,36 @@
 package bitmap.transformer;
 
 import org.junit.Test;
+
+import java.io.File;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
-   /* @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
 
-    }*/
+    @Test public void readFileTestGoodRead() {
+
+
+        Bitmap newBitmap = new Bitmap();
+
+       newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+
+        assertEquals("Good Read", newBitmap.readBitmap(new File("src/main/assets/mario.bmp")));
+    }
+    @Test public void readFileTestBadRead() {
+
+
+        Bitmap newBitmap = new Bitmap();
+
+        newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+
+        assertEquals("Bad Read", newBitmap.readBitmap(new File("src/main/assets/mario.jpg")));
+    }
+
+
 }
+
+// Given more time I would write test for the invert transformation to see if it is correctly inverting color scheme
+
+// Also write another test to make sure the file path is correct
+
