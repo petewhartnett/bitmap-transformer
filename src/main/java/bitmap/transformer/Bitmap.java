@@ -18,6 +18,7 @@ public class Bitmap {
       e.printStackTrace();
       System.out.println("can't read file");
     }
+    System.out.println("image read successfully");
   }
 
 
