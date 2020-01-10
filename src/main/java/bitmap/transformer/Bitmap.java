@@ -2,6 +2,7 @@ package bitmap.transformer;
 
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -24,19 +25,32 @@ public class Bitmap {
   }
 
    public void imageToFile(File path){
-try {
+     try {
 
-  ImageIO.write(this.img, "bmp", path);
+       ImageIO.write(this.img, "bmp", path);
+     } catch (IOException e) {
+       e.printStackTrace();
+       System.out.println("can't read file");
+     }
+
+    }
+
+    public String invertImage() {
+
+      // http://www.java2s.com/Tutorials/Java/Graphics_How_to/Image/Convert_negative_image_to_positive.htm
+      // used as a resource to develop this method
+      for (int x = 0; x < this.img.getWidth(); x++) {
+        for (int y = 0; y < this.img.getHeight(); y++) {
+          int rgba = img.getRGB(x, y);
+          Color color = new Color(rgba, true);
+          color = new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
+          img.setRGB(x, y, color.getRGB());
+        }
+      }
+      return "image inverted successfully";
+    }
+
 }
-      catch (IOException e) {
-      e.printStackTrace();
-      System.out.println("can't read file");
-    }
-
-
-  }
-
-    }
 
 
 
