@@ -3,13 +3,17 @@
  */
 package bitmap.transformer;
 
+import java.io.File;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
 
 
+        Bitmap newBitmap = new Bitmap();
+
+        newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+
+        newBitmap.imageToFile(new File("src/main/assets/mario2.bmp"));
     }
 }
